@@ -3,7 +3,6 @@ language: java
 sudo: enabled
 
 before_script:
-  - chmod +x gradlew
   - which java
   - pwd
   - export CHROME_BIN=/usr/bin/google-chrome
