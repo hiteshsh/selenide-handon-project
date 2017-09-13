@@ -1,0 +1,22 @@
+language: java
+
+sudo: enabled
+
+before_script:
+  - chmod +x gradlew
+  - which java
+  - pwd
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - apt-get update
+  - apt-get install unzip
+  - wget -N http://chromedriver.storage.googleapis.com/2.31/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - chmod +x chromedriver
+  - mv -f chromedriver ./src/test/resources/webdrivers/chromedriver
+  - apt-get install -y libxss1 libappindicator1 libindicator7 fonts-liberation gconf-service libasound2 libgconf-2-4 libnspr4 libnss3 xdg-utils
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - dpkg -i google-chrome*.deb
+
+
+script:
+- gradle clean test -Dbrowser=chrome -Dchromeoptions.args="--headless,--window-size=1280x1080"
