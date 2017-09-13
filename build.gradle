@@ -15,6 +15,7 @@ dependencies {
     testCompile 'com.codeborne:selenide:4.4.1'
     testCompile 'org.testng:testng:6.10'
     testCompile 'org.apache.commons:commons-lang3:3.5'
+    testCompile group: 'com.github.javafaker', name: 'javafaker', version: '0.13'
 }
 test {
     useTestNG {
@@ -24,4 +25,17 @@ test {
 //        }
 
     }
+
+    def browser= System.getProperty("browser")
+    def browserSize=System.getProperty("browserSize")
+    def chromeoptions=System.getProperty("chromeoptions.args")
+
+    if(browser!=null)
+        systemProperty 'selenide.browser', browser
+    else
+        systemProperty 'selenide.browser', 'chrome'
+    if (browserSize!=null)
+        systemProperty 'selenide.browserSize', browserSize
+    if(chromeoptions!=null)
+        systemProperty "chromeoptions.args", chromeoptions
 }
