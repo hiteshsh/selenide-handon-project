@@ -43,4 +43,14 @@ public class Home {
         validateFlashMessage("You have been logged out.");
         return this;
     }
+
+    public Login navigateToLogin(){
+        $(byXpath("//a[contains(text(),'Log in')]")).click();
+        return page(Login.class);
+    }
+
+    public Home userShouldGetSuccesfullyLogIn(){
+        validateFlashMessage("Logged in successfully");
+        return this;
+    }
 }

@@ -4,7 +4,8 @@ import com.codeborne.selenide.Condition;
 import domain.User;
 import utils.UserGenerator;
 
-import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selectors.byId;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
