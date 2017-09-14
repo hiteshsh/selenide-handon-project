@@ -6,7 +6,6 @@ before_script:
   - which java
   - pwd
   - export CHROME_BIN=/usr/bin/google-chrome
-  - apt-get update
   - apt-get install unzip
   - wget -N http://chromedriver.storage.googleapis.com/2.31/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
