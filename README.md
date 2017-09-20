@@ -5,3 +5,7 @@ Gradle is the build management tool used.
 ```
 gradle clean test -Dbrowser=chrome
 ```
+## Selenide Reference
+```
+http://selenide.org/
+```
